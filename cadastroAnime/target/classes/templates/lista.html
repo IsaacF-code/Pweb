@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Teste</title>
+</head>
+<body>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Codigo</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Episódios</th>
+				<th scope="col">Gênero</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each = "anime: ${listar}">
+				<td th:text="${anime.codigo}"></td>
+				<td th:text="${anime.nome}"></td>
+				<td th:text="${anime.episodios}"></td>
+				<td th:text="${anime.genero}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<form method="get" action="/inicio">
+	<input type="submit" value="Voltar ao Inicio"/>
+	</form>	
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
